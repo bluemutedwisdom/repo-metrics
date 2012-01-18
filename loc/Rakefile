@@ -21,7 +21,7 @@ CLEAN.include('reports/*.yaml')
 # Method to get LOC for a range
 def loc_authored(ref1, ref2)
   # No Merge Commits
-  cmd = "git -c mailmap.file=#{BASEDIR}/mailmap log --numstat --no-merges --pretty=format:#%H%n%aN,%cN,%aE,%cE"
+  cmd = "git -c mailmap.file=#{BASEDIR}/mailmap log --numstat --no-merges --ignore-all-space --pretty=format:#%H%n%aN,%cN,%aE,%cE"
   "#{cmd} #{ref1}..#{ref2} --"
 end
 
